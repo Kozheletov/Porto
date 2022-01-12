@@ -2,18 +2,31 @@
   --main-bg-color: #4b5781;
   --main-text-color: #fff;
   --menu-bg-color: #394058;
+  box-sizing: border-box;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
   font-family: 'JetBrains Mono', monospace;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
@@ -99,6 +112,8 @@ body {
 }
 
 .header__top {
+  padding-right: 10px;
+  padding-left: 10px;
   text-align: center;
 }
 
@@ -147,6 +162,7 @@ body {
 @media (min-width: 700px) {
   .header__nav {
     position: initial;
+    background-color: var(--main-bg-color);
   }
 }
 
@@ -162,6 +178,10 @@ body {
   justify-content: center;
 }
 
+.header__nav-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 700px) {
   .header__nav-list {
     padding: 15px 0;
@@ -169,16 +189,50 @@ body {
     flex-direction: row;
     justify-content: space-around;
   }
+
+  .header__nav-item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .header__nav-link {
   display: inline-block;
   text-decoration: none;
   padding: 10px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--main-text-color);
   cursor: pointer;
+  position: relative;
+}
+
+@media (min-width: 700px) {
+  .header__nav-link::before,
+  .header__nav-link::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-text-color);
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .header__nav-link::before {
+    transform-origin: 0;
+    top: 0;
+  }
+
+  .header__nav-link::after {
+    transform-origin: 100%;
+    bottom: 0;
+  }
+
+  .header__nav-link:hover::before,
+  .header__nav-link:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .icon {
@@ -193,6 +247,10 @@ body {
   .icon {
     display: none;
   }
+}
+
+.about {
+  min-height: 100vh;
 }
 
 .hide {
