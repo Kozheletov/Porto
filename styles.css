@@ -1,7 +1,7 @@
 :root {
   --main-bg-color: #4b5781;
   --main-text-color: #fff;
-  --menu-bg-color: #856c56;
+  --menu-bg-color: #394058;
 }
 
 *,
@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   overflow: hidden;
@@ -179,6 +179,20 @@ body {
   font-weight: 700;
   color: var(--main-text-color);
   cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  fill: white;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+@media (min-width: 700px) {
+  .icon {
+    display: none;
+  }
 }
 
 .hide {
