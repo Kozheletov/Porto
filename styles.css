@@ -2,6 +2,7 @@
   --main-bg-color: #4b5781;
   --main-text-color: #fff;
   --menu-bg-color: #394058;
+  --middle-text-size: 20px;
   box-sizing: border-box;
 }
 
@@ -142,7 +143,7 @@ body {
 
 @media (min-width: 700px) {
   .header__description {
-    font-size: 20px;
+    font-size: var(--middle-text-size);
   }
 }
 
@@ -249,8 +250,25 @@ body {
   }
 }
 
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 .about {
   min-height: 100vh;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__img-wrapper {
+  max-width: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .about__img {
@@ -258,8 +276,72 @@ body {
   max-width: 100%;
 }
 
+.about__grid {
+  display: grid;
+  gap: 30px;
+}
+
+.about__description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .hide {
   top: -800px;
+}
+
+.about__link {
+  color: var(--main-text-color);
+  font-size: 20px;
+}
+
+.about__skills-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.about__list {
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+}
+
+.about__item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+@media (min-width: 700px) {
+  .about__description {
+    font-size: var(--middle-text-size);
+  }
+
+  .about__list {
+    max-width: 800px;
+    padding-left: 0;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 18px;
+  }
+
+  .about__skills-title {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .about__grid {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  .about__skills-title {
+    margin-top: 30px;
+    font-size: 24px;
+  }
+
+  .about__list {
+    font-size: var(--middle-text-size);
+  }
 }
 
 .show {
