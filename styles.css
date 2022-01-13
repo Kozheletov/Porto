@@ -253,6 +253,11 @@ body {
   min-height: 100vh;
 }
 
+.about__img {
+  display: block;
+  max-width: 100%;
+}
+
 .hide {
   top: -800px;
 }
