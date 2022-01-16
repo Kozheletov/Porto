@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сайт портфолио фронтенд разработчика Григория Кожелетова" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -91,12 +92,20 @@
         </g>
       </svg>
 
-      <button class="button-menu" type="button"><span class="burger-menu" data-click="hide"></span></button>
+      <button class="button-menu" type="button" aria-label="button menu">
+        <span class="burger-menu" data-click="hide"></span>
+      </button>
       <nav class="header__nav hide">
         <ul class="header__nav-list">
-          <li class="header__nav-item"><a href="#about" class="header__nav-link">Обо мне</a></li>
-          <li class="header__nav-item"><a href="#projects" class="header__nav-link">Проекты</a></li>
-          <li class="header__nav-item"><a href="#contacts" class="header__nav-link">Контакты</a></li>
+          <li class="header__nav-item">
+            <a href="#about" class="header__nav-link" data-scroll-nav="about">Обо мне</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#projects" class="header__nav-link" data-scroll-nav="projects">Проекты</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#contacts" class="header__nav-link" data-scroll-nav="contacts">Контакты</a>
+          </li>
         </ul>
       </nav>
       <div class="header__top">
@@ -326,6 +335,7 @@
         </svg>
       </div>
     </footer>
+    <button class="js-button-top">&#8593;</button>
     <script src="scripts.js"></script>
   </body>
 </html>
