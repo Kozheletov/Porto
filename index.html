@@ -16,7 +16,7 @@
     <title>Сайт Григория Кожелетова</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header scroll-element" data-scroll-position="0">
       <svg
         version="1.1"
         id="Capa_1"
@@ -114,7 +114,7 @@
       </div>
     </header>
     <main class="main">
-      <section id="about" class="about">
+      <section id="about" class="about scroll-element" data-scroll-position="1">
         <h2 class="visually-hidden about-title">Обо мне</h2>
         <div class="about__grid">
           <div class="about__elem">
@@ -148,7 +148,7 @@
           </div>
         </div>
       </section>
-      <section id="projects" class="projects">
+      <section id="projects" class="projects scroll-element" data-scroll-position="2">
         <h2 class="projects__title">Мои проекты</h2>
         <div class="projects__grid">
           <section class="projects__item">
@@ -239,7 +239,7 @@
           </section>
         </div>
       </section>
-      <section id="contacts" class="contacts">
+      <section id="contacts" class="contacts scroll-element" data-scroll-position="3">
         <div class="contacts__wrap">
           <h2 class="contacts__title">Мои почта и телеграм:</h2>
           <ul class="contacts__list">
@@ -335,6 +335,16 @@
         </svg>
       </div>
     </footer>
+    <div class="scroll-area">
+      <button
+        class="scroll-area__button scroll-area__button_selected"
+        type="button"
+        data-scroll-button="0"
+      ></button>
+      <button class="scroll-area__button" type="button" data-scroll-button="1"></button>
+      <button class="scroll-area__button" type="button" data-scroll-button="2"></button>
+      <button class="scroll-area__button" type="button" data-scroll-button="3"></button>
+    </div>
     <button class="js-button-top">&#8593;</button>
     <script src="scripts.js"></script>
   </body>
